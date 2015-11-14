@@ -12,7 +12,7 @@
 */
 
 /*HOME*/
-Route::get('/', 'HomeController@index');
+Route::get('/', 'Auth\AuthController@getLogin');
 
 /*USERS*/
 Route::get('auth/login', 'Auth\AuthController@getLogin');
@@ -25,6 +25,35 @@ Route::post('auth/register', 'Auth\AuthController@postRegister');
 /* DASHBOARD */
 //Route::get('/dashboard', 'DashboardController@index');
 Route::get('dashboard', [
+    'as'  => 'dashboard',
     'middleware' => 'auth',
     'uses' => 'DashboardController@index'
+]);
+
+/*USER*/
+Route::get('user', [
+    'as'  => 'user',
+    'middleware' => 'auth',
+    'uses' => 'UserController@index'
+]);
+
+/*CAMPAIN*/
+Route::get('campain', [
+    'as'  => 'campain',
+    'middleware' => 'auth',
+    'uses' => 'UserController@index'
+]);
+
+/*TEST*/
+Route::get('test', [
+    'as'  => 'test',
+    'middleware' => 'auth',
+    'uses' => 'UserController@index'
+]);
+
+/*REPORT*/
+Route::get('report', [
+    'as'  => 'report',
+    'middleware' => 'auth',
+    'uses' => 'UserController@index'
 ]);

@@ -57,15 +57,11 @@
 							<li class="dropdown">
 							  <a href="#fakelink" class="dropdown-toggle" data-toggle="dropdown">
 								<!-- <img src="assets/img/avatar/avatar-1.jpg" class="avatar img-circle" alt="Avatar"> -->
-								Hi, <strong>Paris Hawker</strong>
+								Hola, <strong>{{ $userName }}</strong>
 							  </a>
 							  <ul class="dropdown-menu square primary margin-list-rounded with-triangle">
-								<li><a href="#fakelink">Account setting</a></li>
-								<li><a href="#fakelink">Payment setting</a></li>
-								<li><a href="#fakelink">Change password</a></li>
-								<li><a href="#fakelink">My public profile</a></li>
+								<li><a href="#fakelink">Mi cuenta</a></li>
 								<li class="divider"></li>
-								<li><a href="lock-screen.html">Lock screen</a></li>
 								<li>{!! HTML::link('auth/logout', 'Logout') !!}</li>
 							  </ul>
 							</li>
@@ -75,11 +71,11 @@
 						<!-- Begin Collapse menu nav -->
 						<div class="collapse navbar-collapse" id="main-fixed-nav">
 							<!-- Begin nav search form -->
-							<form class="navbar-form navbar-left" role="search">
+							<!-- <form class="navbar-form navbar-left" role="search">
 								<div class="form-group">
 									<input type="text" class="form-control" placeholder="Search">
 								</div>
-							</form>
+							</form> -->
 							<!-- End nav search form -->
 							<ul class="nav navbar-nav navbar-left">
 								<!-- Begin nav task -->
@@ -153,22 +149,40 @@
 			<div class="sidebar-left sidebar-nicescroller">
 				<ul class="sidebar-menu">
 					<li>
-						<a href="index.html">
+						<a href="{!! URL::route('dashboard') !!}">
 							<i class="fa fa-dashboard icon-sidebar"></i>
-							Dashboard
+							Inicio
 						</a>
 					</li>
 					<li>
-						<a href="front-end.html">
+						<a href="{!! URL::route('user') !!}">
 							<i class="fa fa-bomb icon-sidebar"></i>
-							Web templates
+							Usuarios
 						</a>
 					</li>
 					<li>
+						<a href="{!! URL::route('campain') !!}">
+							<i class="fa fa-desktop icon-sidebar"></i>
+							Campañas
+						</a>
+					</li>
+					<li>
+						<a href="{!! URL::route('test') !!}">
+							<i class="fa fa-flask icon-sidebar"></i>
+							Pruebas A/B
+						</a>
+					</li>
+					<li>
+						<a href="{!! URL::route('report') !!}">
+							<i class="fa fa-folder icon-sidebar"></i>
+							Reportes
+						</a>
+					</li>
+					<!-- <li>
 						<a href="#fakelink">
 							<i class="fa fa-desktop icon-sidebar"></i>
 							<i class="fa fa-angle-right chevron-icon-sidebar"></i>
-							Layout template
+							Empresas
 							<span class="badge badge-warning span-sidebar">9</span>
 							</a>
 						<ul class="submenu">
@@ -182,8 +196,8 @@
 							<li><a href="layout-hidden-sidebar-left.html">Hidden sidebar left</a></li>
 							<li><a href="layout-top-notification.html">Top notification</a></li>
 						</ul>
-					</li>
-					<li>
+					</li> -->
+					<!-- <li>
 						<a href="#fakelink">
 							<i class="fa fa-flask icon-sidebar"></i>
 							<i class="fa fa-angle-right chevron-icon-sidebar"></i>
@@ -196,8 +210,8 @@
 							<li><a href="widget-blog.html">Blog</a></li>
 							<li><a href="widget-social.html">Social <span class="label label-warning span-sidebar">HOT</span></a></li>
 						</ul>
-					</li>
-					<li>
+					</li> -->
+					<!-- <li>
 						<a href="#fakelink">
 							<i class="fa fa-folder icon-sidebar"></i>
 							<i class="fa fa-angle-right chevron-icon-sidebar"></i>
@@ -260,8 +274,8 @@
 							<li><a href="chart-flot.html">Flot chart</a></li>
 							<li><a href="chart-easy-knob.html">Easy pie chart &amp; knob</a></li>
 						</ul>
-					</li>
-					<li class="static">EXTRA DESIGNS</li>
+					</li> -->
+					<!-- <li class="static">EXTRA DESIGNS</li>
 					<li>
 						<a href="#fakelink">
 							<i class="fa fa-envelope icon-sidebar"></i>
@@ -398,8 +412,8 @@
 							</div>
 						</div>
 						Daily task report
-					</li>
-					<li class="text-content">
+					</li> -->
+					<!-- <li class="text-content">
 						<div class="switch">
 							<div class="onoffswitch blank">
 								<input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="remembercomputer" checked>
@@ -410,7 +424,7 @@
 							</div>
 						</div>
 						Remember this computer
-					</li>
+					</li> -->
 				</ul>
 			</div><!-- /.sidebar-left -->
 			<!-- END SIDEBAR LEFT -->
