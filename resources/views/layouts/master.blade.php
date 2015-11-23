@@ -16,12 +16,15 @@
         {!! HTML::style('plugins/font-awesome/css/font-awesome.min.css') !!}
         {!! HTML::style('css/style.css') !!}
         {!! HTML::style('css/style-responsive.css') !!}
+				{!! HTML::style('plugins/datatable/css/bootstrap.datatable.min.css') !!}
 
 		<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
 		<!--[if lt IE 9]>
 		<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
 		<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
 		<![endif]-->
+
+
 	</head>
 
 	<body class="tooltips">
@@ -451,23 +454,20 @@
 		END PAGE
 		===========================================================
 		-->
-
-		<!--
-		===========================================================
-		Placed at the end of the document so the pages load faster
-		===========================================================
-		-->
+		
 		<!-- MAIN JAVASRCIPT (REQUIRED ALL PAGE)-->
-        {!! HTML::script('js/jquery.min.js') !!}
-        {!! HTML::script('js/bootstrap.min.js') !!}
-        {!! HTML::script('plugins/retina/retina.min.js') !!}
-        {!! HTML::script('plugins/nicescroll/jquery.nicescroll.js') !!}
-        {!! HTML::script('plugins/slimscroll/jquery.slimscroll.min.js') !!}
-        {!! HTML::script('plugins/backstretch/jquery.backstretch.min.js') !!}
+				{!! HTML::script('js/jquery.min.js') !!}
+				{!! HTML::script('js/bootstrap.min.js') !!}
+				{!! HTML::script('plugins/retina/retina.min.js') !!}
+				{!! HTML::script('plugins/nicescroll/jquery.nicescroll.js') !!}
+				{!! HTML::script('plugins/slimscroll/jquery.slimscroll.min.js') !!}
+				{!! HTML::script('plugins/backstretch/jquery.backstretch.min.js') !!}
 
+				{!! HTML::script('plugins/datatable/js/jquery.dataTables.js') !!}
+				{!! HTML::script('plugins/datatable/js/bootstrap.datatable.js') !!}
 
 		<!-- MAIN APPS JS -->
-        {!! HTML::script('js/apps.js') !!}
+				{!! HTML::script('js/apps.js') !!}
 
 	</body>
 </html>

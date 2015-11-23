@@ -41,7 +41,16 @@ Route::get('user', [
 Route::get('campain', [
     'as'  => 'campain',
     'middleware' => 'auth',
-    'uses' => 'UserController@index'
+    'uses' => 'CampainController@index'
+]);
+
+/*COMPANY*/
+Route::resource('company', 'CompanyController');
+
+Route::get('campain/{id}', [
+    'as'  => 'campain',
+    'middleware' => 'auth',
+    'uses' => 'CampainController@index'
 ]);
 
 /*TEST*/
