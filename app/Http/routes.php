@@ -23,7 +23,6 @@ Route::get('auth/register', 'Auth\AuthController@getRegister');
 Route::post('auth/register', 'Auth\AuthController@postRegister');
 
 /* DASHBOARD */
-//Route::get('/dashboard', 'DashboardController@index');
 Route::get('dashboard', [
     'as'  => 'dashboard',
     'middleware' => 'auth',
@@ -50,7 +49,7 @@ Route::resource('campain', 'CampainController');
 // Route::get('campain/optAdd', 'CampainController@optAdd');
 
 /*COMPANY*/
-Route::resource('company', 'CompanyController');
+Route::resource('company', 'CompanyController', ['before' => 'auth']);
 
 //Route::get('company/optAdd', 'CompanyController@optAdd');
 

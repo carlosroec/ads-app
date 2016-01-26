@@ -17,6 +17,13 @@ class CampainController extends BaseController
         return view('campain.index', ['userName' => $userName, 'campains' => $campains]);
     }
 
+    public function create()
+    {
+        $userName = Auth::user()->name;
+        
+        return view('company.create', ['userName' => $userName]);
+    }
+
     public function optAdd()
     {
         // $campain = new Campain;

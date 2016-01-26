@@ -8,6 +8,7 @@ use App\Company;
 
 class CompanyController extends BaseController
 {
+    
     public function index()
     {
         $userName = Auth::user()->name;
@@ -23,6 +24,14 @@ class CompanyController extends BaseController
 
         return view('company.index', ['userName' => $userName, 'companies' => $companies]);
     }
+
+    public function create()
+    {
+        $userName = Auth::user()->name;
+        
+        return view('company.create', ['userName' => $userName]);
+    }
+
     public function edit()
     {
 
@@ -43,7 +52,7 @@ class CompanyController extends BaseController
         $company->save();
 
         $userName = '';
-        
+
         return view('company.index', ['userName' => $userName]);
     }
 
