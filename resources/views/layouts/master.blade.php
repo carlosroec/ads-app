@@ -164,7 +164,7 @@
 						</a>
 					</li>
 					<li>
-						<a href="{!! URL::route('campain') !!}">
+						<a href="{!! URL::route('campain.index') !!}">
 							<i class="fa fa-desktop icon-sidebar"></i>
 							Campañas
 						</a>
@@ -454,7 +454,7 @@
 		END PAGE
 		===========================================================
 		-->
-		
+
 		<!-- MAIN JAVASRCIPT (REQUIRED ALL PAGE)-->
 				{!! HTML::script('js/jquery.min.js') !!}
 				{!! HTML::script('js/bootstrap.min.js') !!}

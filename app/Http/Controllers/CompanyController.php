@@ -18,7 +18,7 @@ class CompanyController extends BaseController
         // $company->user_id = 1;
         // $company->save();
         //
-        // $companies = Company::all();
+        $companies = Company::all();
 
 
         return view('company.index', ['userName' => $userName, 'companies' => $companies]);
@@ -26,6 +26,25 @@ class CompanyController extends BaseController
     public function edit()
     {
 
+    }
+
+    public function optAdd()
+    {
+        $company = new Company;
+        $company->name = "Demo company 1";
+        $company->description = "Descripción company 1";
+        $company->user_id = 1;
+        $company->save();
+
+        $company = new Company;
+        $company->name = "Demo company 2";
+        $company->description = "Descripción company 2";
+        $company->user_id = 1;
+        $company->save();
+
+        $userName = '';
+        
+        return view('company.index', ['userName' => $userName]);
     }
 
 }
