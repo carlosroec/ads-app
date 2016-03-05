@@ -2,25 +2,22 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Routing\Controller as BaseController;
+use App\Http\Controllers\Controller;
+use Illuminate\Http\Request;
+
 use Auth;
 use App\Company;
+use App\User;
 
-class CompanyController extends BaseController
+
+class CompanyController extends Controller
 {
-    
+
     public function index()
     {
         $userName = Auth::user()->name;
 
-        // $company = new Company;
-        // $company->name = 'Name1';
-        // $company->description = 'Description1';
-        // $company->user_id = 1;
-        // $company->save();
-        //
         $companies = Company::all();
-
 
         return view('company.index', ['userName' => $userName, 'companies' => $companies]);
     }
@@ -28,8 +25,32 @@ class CompanyController extends BaseController
     public function create()
     {
         $userName = Auth::user()->name;
-        
-        return view('company.create', ['userName' => $userName]);
+        $users = User::all();
+
+        return view('company.create', ['userName' => $userName, 'users' => $users]);
+    }
+
+    public function store(Request $request)
+    {
+        $userName = Auth::user()->name;
+
+        $this->validate($request, [
+                'name'          => 'required',
+                'description'   => 'required',
+                'phone'         => 'required',
+                'email'         => 'required'
+            ]);
+
+        $input = $request->all();
+
+        $company = new Company;
+        $company->name = $input['name'];
+        $company->description = $input['description'];
+        $company->phone = $input['phone'];
+        $company->user_id = $input['user'];
+        $company->save();
+
+        return redirect('company/');
     }
 
     public function edit()

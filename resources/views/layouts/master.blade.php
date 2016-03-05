@@ -6,7 +6,7 @@
 		<meta name="description" content="Sentir, Responsive admin and dashboard UI kits template">
 		<meta name="keywords" content="admin,bootstrap,template,responsive admin,dashboard template,web apps template">
 		<meta name="author" content="Ari Rusmanto, Isoh Design Studio, Warung Themes">
-		<title>SENTIR - Responsive admin and dashboard UI kits template</title>
+		<title>Ads App</title>
 
 
 		<!-- BOOTSTRAP CSS (REQUIRED ALL PAGE)-->
@@ -14,6 +14,7 @@
 
 		<!-- MAIN CSS (REQUIRED ALL PAGE)-->
         {!! HTML::style('plugins/font-awesome/css/font-awesome.min.css') !!}
+        {!! HTML::style('plugins/datepicker/datepicker.min.css') !!}
         {!! HTML::style('css/style.css') !!}
         {!! HTML::style('css/style-responsive.css') !!}
 				{!! HTML::style('plugins/datatable/css/bootstrap.datatable.min.css') !!}
@@ -80,68 +81,7 @@
 								</div>
 							</form> -->
 							<!-- End nav search form -->
-							<ul class="nav navbar-nav navbar-left">
-								<!-- Begin nav task -->
-								<li class="dropdown">
-									<a href="#fakelink" class="dropdown-toggle" data-toggle="dropdown">
-										<span class="badge badge-warning icon-count">3</span>
-										<i class="fa fa-tasks"></i>
-									</a>
-									<ul class="dropdown-menu square margin-list-rounded with-triangle">
-										<li>
-											<div class="nav-dropdown-heading">
-											Tasks
-											</div><!-- /.nav-dropdown-heading -->
-											<div class="nav-dropdown-content scroll-nav-dropdown">
-												<ul>
-													<li class="unread"><a href="#fakelink">
-														<i class="fa fa-check-circle-o absolute-left-content icon-task completed"></i>
-														Creating documentation
-														<span class="small-caps">Completed : Yesterday</span>
-													</a></li>
-													<li><a href="#fakelink">
-														<i class="fa fa-clock-o absolute-left-content icon-task progress"></i>
-														Eating sands
-														<span class="small-caps">Deadline : Tomorrow</span>
-													</a></li>
-													<li><a href="#fakelink">
-														<i class="fa fa-clock-o absolute-left-content icon-task progress"></i>
-														Sending payment
-														<span class="small-caps">Deadline : Next week</span>
-													</a></li>
-													<li><a href="#fakelink">
-														<i class="fa fa-exclamation-circle absolute-left-content icon-task uncompleted"></i>
-														Uploading new version
-														<span class="small-caps">Deadline: 2 seconds ago</span>
-													</a></li>
-													<li><a href="#fakelink">
-														<i class="fa fa-exclamation-circle absolute-left-content icon-task uncompleted"></i>
-														Drinking coffee
-														<span class="small-caps">Deadline : 2 hours ago</span>
-													</a></li>
-													<li class="unread"><a href="#fakelink">
-														<i class="fa fa-check-circle-o absolute-left-content icon-task completed"></i>
-														Walking to nowhere
-														<span class="small-caps">Completed : over a year ago</span>
-													</a></li>
-													<li class="unread"><a href="#fakelink">
-														<i class="fa fa-check-circle-o absolute-left-content icon-task completed"></i>
-														Sleeping under bridge
-														<span class="small-caps">Completed : Dec 31, 2013</span>
-													</a></li>
-													<li class="unread"><a href="#fakelink">
-														<i class="fa fa-check-circle-o absolute-left-content icon-task completed"></i>
-														Buying some cigarettes
-														<span class="small-caps">Completed : 2 days ago</span>
-													</a></li>
-												</ul>
-											</div><!-- /.nav-dropdown-content scroll-nav-dropdown -->
-											<button class="btn btn-primary btn-square btn-block">See all task</button>
-										</li>
-									</ul>
-								</li>
-								<!-- End nav task -->
-							</ul>
+							
 						</div><!-- /.navbar-collapse -->
 						<!-- End Collapse menu nav -->
 					</div><!-- /.top-nav-content -->
@@ -480,6 +420,7 @@
 				{!! HTML::script('plugins/nicescroll/jquery.nicescroll.js') !!}
 				{!! HTML::script('plugins/slimscroll/jquery.slimscroll.min.js') !!}
 				{!! HTML::script('plugins/backstretch/jquery.backstretch.min.js') !!}
+				{!! HTML::script('plugins/datepicker/bootstrap-datepicker.js') !!}
 
 				{!! HTML::script('plugins/datatable/js/jquery.dataTables.js') !!}
 				{!! HTML::script('plugins/datatable/js/bootstrap.datatable.js') !!}
