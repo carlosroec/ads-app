@@ -53,6 +53,12 @@ Route::resource('company', 'CompanyController', ['before' => 'auth']);
 
 //Route::get('company/optAdd', 'CompanyController@optAdd');
 
+Route::get('process/{campain_id}', [
+    'as'            => 'process',
+    'middleware'    => 'auth',
+    'uses'          => 'CampainController@processAdvert'
+]);
+
 /*TEST*/
 Route::get('test', [
     'as'  => 'test',
