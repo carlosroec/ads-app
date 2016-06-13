@@ -19,7 +19,13 @@
 					<tr class="odd gradeA">
 						<td>{!! HTML::linkRoute('company.edit', $company->name, array($company->id)) !!}</td>
 						<td>{{ $company->description }}</td>
-						<td>{!! HTML::linkRoute('company.destroy', 'Eliminar', array($company->id)) !!}</td>
+						<td>
+							<form role="form" method="POST" action="/company/{{ $company->id }}">
+								<input name="_method" type="hidden" value="DELETE">
+							    <button type="submit" >ELIMINAR</button>
+								<input type="hidden" name="_token" value="{{ csrf_token() }}">
+							</form>
+						</td>
 					</tr>
 				@endforeach
 			</tbody>

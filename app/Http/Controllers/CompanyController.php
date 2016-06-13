@@ -53,9 +53,42 @@ class CompanyController extends Controller
         return redirect('company/');
     }
 
-    public function edit()
+    public function edit($id)
     {
+        $userName = Auth::user()->name;
+        $users = User::all();
+        $company = Company::find($id);
 
+        return view('company.edit', ['userName' => $userName, 'users' => $users, 'company' => $company]);
+    }
+
+    public function update(Request $request, $id)
+    {
+        $company = Company::find($id);
+
+        $input = $request->all();
+
+        $company->name = $input['name'];
+        $company->description = $input['description'];
+        $company->phone = $input['phone'];
+        $company->user_id = $input['user'];
+        $company->save();
+
+        return redirect('company/');
+    }
+
+    public function destroy($id)
+    {
+        $company = Company::find($id);
+
+        $company->delete();
+
+        return redirect('company/');
+    }
+
+    public function show($id)
+    {
+        return $this->index();
     }
 
     public function optAdd()

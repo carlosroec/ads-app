@@ -16,6 +16,7 @@
 					<th>Inicio</th>
 					<th>Fin</th>
 					<th></th>
+					<th></th>
 				</tr>
 			</thead>
 		<tbody>
@@ -26,6 +27,13 @@
 				<td>{{ $campain->start_at }}</td>
 				<td>{{ $campain->end_at }}</td>
 				<td>{!! HTML::linkRoute('campain.edit', 'Ver', array($campain->id)) !!}</td>
+				<td>
+					<form role="form" method="POST" action="/campain/{{ $campain->id }}">
+						<input name="_method" type="hidden" value="DELETE">
+						<button type="submit" >ELIMINAR</button>
+						<input type="hidden" name="_token" value="{{ csrf_token() }}">
+					</form>
+				</td>
 			</tr>
 		@endforeach
 		</table>

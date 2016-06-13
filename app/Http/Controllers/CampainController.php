@@ -23,8 +23,19 @@ class CampainController extends Controller
     {
         $userName = Auth::user()->name;
         $companies = Company::all();
-        
+
         return view('campain.create', ['userName' => $userName, 'companies' => $companies]);
+    }
+
+    public function edit($id)
+    {
+        $userName = Auth::user()->name;
+        $companies = Company::all();
+
+        $campain = Campain::find($id);
+
+
+        return view('campain.edit', ['userName' => $userName, 'companies' => $companies, 'campain' => $campain]);
     }
 
     public function store(Request $request)
@@ -55,6 +66,34 @@ class CampainController extends Controller
         return redirect('campain/');
     }
 
+    public function update(Request $request, $id)
+    {
+        $campain = Campain::find($id);
+
+        $input = $request->all();
+
+        $campain->start_at = $input['start_at'];
+        $campain->end_at = $input['end_at'];
+        $campain->description = $input['description'];
+        $campain->cost = $input['cost'];
+        $campain->gain = $input['gain'];
+        $campain->target = $input['target'];
+        $campain->advert = $input['advert'];
+        $campain->company_id = $input['company_id'];
+        $campain->save();
+
+        return redirect('campain/');
+    }
+
+    public function destroy($id)
+    {
+        $campain = Campain::find($id);
+
+        $campain->delete();
+
+        return redirect('campain/');
+    }
+
     public function processAdvert($campain_id)
     {
         $userName = Auth::user()->name;
@@ -63,16 +102,18 @@ class CampainController extends Controller
         $advert = $campain->advert;
 
         $result = "";
-        
+
         try {
-            
+
             $ml = new MonkeyLearn\Client('74312b126c6fcee32bddc68b6b3d4b15fee48868');
             $text_list = [$advert];
             $module_id = 'ex_eV2dppYE';
             $res = $ml->extractors->extract($module_id, $text_list);
-            
+
             $results = $res->result;
             $results = $results[0];
+
+            print_r($results);
 
         }catch(Exception $e) {
           echo 'Message: ' .$e->getMessage();
