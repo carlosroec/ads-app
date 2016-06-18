@@ -1,22 +1,34 @@
 @extends('layouts.master')
 
 @section('content')
-<h1 class="page-heading">CAMPAÑAS</h1>
 
 <div class="row">
-	@foreach($results as $result)
-		<div class="col-lg-3">
-			<div class="panel panel-danger panel-square panel-no-border text-center">
-				<div class="panel-heading">
-					<h3 class="panel-title">{{ $result['keyword'] }}</h3>
-				</div>
-				<div class="panel-body">
-					<h1 class="bolded tiles-number text-danger">{{ $result['relevance'] * 100 }} %</h1>
-					<p class="text-muted"><small>CONTADOR <strong>{{ $result['count'] }}</strong></small></p>
+	<h1></h1>
+	<div class="col-sm-12">
+		<div class="alert alert-warning alert-bold-border fade in alert-dismissable">
+			<button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+			<p><strong>Artículo</strong></p>
+			<p class="text-muted">
+				{{ $textArticle }}
+			</p>
+		</div>
+	</div>
+</div>
+<div class="row">
+	@foreach($keywords as $keyword)
+		<div class="col-sm-3">
+			<div class="the-box no-border {{ $keyword['color'] }} tiles-information">
+				<i class="fa fa-users icon-bg"></i>
+				<div class="tiles-inner text-center">
+					<p>{{ $keyword["text"] }}</p>
+					<h1 class="bolded">{{ $keyword["relevance"] }}</h1>
+					<div class="progress no-rounded progress-xs">
+						<div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" style="width: 50%"></div>
+					</div>
+					<p><small>{{ $keyword["isRegistered"] }}</small></p>
 				</div>
 			</div>
 		</div>
 	@endforeach
 </div>
-
 @stop

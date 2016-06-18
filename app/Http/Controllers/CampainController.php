@@ -101,7 +101,7 @@ class CampainController extends Controller
         $campain = Campain::find($campain_id);
         $advert = $campain->advert;
 
-        $result = "";
+        $response = "";
 
         try {
 
@@ -111,15 +111,31 @@ class CampainController extends Controller
             $res = $ml->extractors->extract($module_id, $text_list);
 
             $results = $res->result;
-            $results = $results[0];
-
-            print_r($results);
+            $response = $results[0];
 
         }catch(Exception $e) {
           echo 'Message: ' .$e->getMessage();
         }
 
-        return view('campain.result', ['userName' => $userName, 'results' => $results]);
+        $colors = ['bg-success', 'bg-primary', 'bg-danger', 'bg-warning'];
+        $keywords = [];
+        foreach ($response as $item) {
+            $text = $item["keyword"];
+            $relevance = $item["relevance"];
+            $isRegistered = true;
+            $color = $colors[array_rand($colors)];
+
+            $relevance = ($relevance * 100) . "%";
+
+            $keywords[] = [
+                "text" => $text,
+                "relevance" => $relevance,
+                "isRegistered" => $isRegistered,
+                "color" => $color
+            ];
+        }
+
+        return view('campain.result', ['userName' => $userName, 'textArticle' => $advert, 'keywords' => $keywords]);
     }
 
     public function optAdd()

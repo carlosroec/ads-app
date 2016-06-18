@@ -62,7 +62,7 @@
 
 			  <input type="hidden" name="_token" value="{{ csrf_token() }}">
 
-			  <button type="submit" class="btn btn-danger"><i class="fa fa-sign-in"></i> Guardar</button>
+			  {!! HTML::linkRoute('process', 'Procesar Sistema de Aprendizaje', array($campain->id), array('class' => 'btn btn-warning')) !!} &nbsp;<button type="submit" class="btn btn-danger"><i class="fa fa-sign-in"></i> Guardar</button>
 			</form>
 		</div><!-- /.the-box -->
 	</div>
