@@ -7,6 +7,7 @@ use MonkeyLearn;
 use Auth;
 use App\Campain;
 use App\Company;
+use App\Keyword;
 
 class CampainController extends Controller
 {
@@ -122,10 +123,20 @@ class CampainController extends Controller
         foreach ($response as $item) {
             $text = $item["keyword"];
             $relevance = $item["relevance"];
-            $isRegistered = true;
+            $isRegistered = 'Existente';
             $color = $colors[array_rand($colors)];
 
             $relevance = ($relevance * 100) . "%";
+
+            $keyword = Keyword::where('text', '=', $text)->count();
+
+            if ($keyword == 0) {
+                $isRegistered = 'Nuevo Registro';
+                $keyword = new Keyword;
+                $keyword->text = $text;
+                
+                $keyword->save();
+            }
 
             $keywords[] = [
                 "text" => $text,
