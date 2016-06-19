@@ -8,6 +8,7 @@ use Auth;
 use App\Campain;
 use App\Company;
 use App\Keyword;
+use App\Link;
 
 class CampainController extends Controller
 {
@@ -134,8 +135,12 @@ class CampainController extends Controller
                 $isRegistered = 'Nuevo Registro';
                 $keyword = new Keyword;
                 $keyword->text = $text;
-                
                 $keyword->save();
+
+                $link = new Link;
+                $link->campain_id = $campain_id;
+                $link->keyword_id = $keyword->id;
+                $link->save();
             }
 
             $keywords[] = [

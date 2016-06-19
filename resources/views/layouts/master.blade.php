@@ -13,6 +13,7 @@
         {!! HTML::style('css/bootstrap.min.css') !!}
 
 		<!-- MAIN CSS (REQUIRED ALL PAGE)-->
+		{!! HTML::style('plugins/c3-chart/c3.min.css') !!}
         {!! HTML::style('plugins/font-awesome/css/font-awesome.min.css') !!}
         {!! HTML::style('plugins/datepicker/datepicker.min.css') !!}
         {!! HTML::style('css/style.css') !!}
@@ -81,7 +82,7 @@
 								</div>
 							</form> -->
 							<!-- End nav search form -->
-							
+
 						</div><!-- /.navbar-collapse -->
 						<!-- End Collapse menu nav -->
 					</div><!-- /.top-nav-content -->
@@ -424,6 +425,11 @@
 
 				{!! HTML::script('plugins/datatable/js/jquery.dataTables.js') !!}
 				{!! HTML::script('plugins/datatable/js/bootstrap.datatable.js') !!}
+
+
+				{!! HTML::script('plugins/c3-chart/d3.v3.min.js', array('charset' => 'utf-8')) !!}
+				{!! HTML::script('plugins/c3-chart/c3.min.js') !!}
+				{!! HTML::script('plugins/c3-chart/example.js') !!}
 
 		<!-- MAIN APPS JS -->
 				{!! HTML::script('js/apps.js') !!}

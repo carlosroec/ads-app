@@ -14,10 +14,8 @@ class CreateLinksTable extends Migration
     {
         Schema::create('links', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('name');
-            $table->string('email')->unique();
-            $table->string('password', 60);
-            $table->rememberToken();
+            $table->integer('campain_id');
+            $table->integer('keyword_id');
             $table->timestamps();
         });
     }

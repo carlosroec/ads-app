@@ -11,6 +11,8 @@ class DashboardController extends BaseController
     {
         $userName = Auth::user()->name;
 
+        
+
         return view('dashboard', ['userName' => $userName]);
     }
 }
