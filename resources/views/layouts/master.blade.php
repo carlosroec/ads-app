@@ -135,10 +135,14 @@
 						</a>
 					</li> -->
 					<li>
-						<a href="{!! URL::route('report') !!}">
+						<a href="#">
 							<i class="fa fa-folder icon-sidebar"></i>
 							Reportes
 						</a>
+						<ul class="submenu">
+							<li><a href="{!! URL::route('report_campains') !!}">Campañas</a></li>
+							<li><a href="{!! URL::route('report_companies') !!}">Empresas</a></li>
+						</ul>
 					</li>
 					<!-- <li>
 						<a href="#fakelink">
