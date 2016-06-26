@@ -139,6 +139,7 @@
 							<li><a href="{!! URL::route('report_companies') !!}">Empresas</a></li>
 							<li><a href="{!! URL::route('report_keywords') !!}">Palabras Clave</a></li>
 							<li><a href="{!! URL::route('report_global') !!}">Promedio</a></li>
+							<li><a href="{!! URL::route('report_global') !!}">Palabras Clave por ROI</a></li>
 						</ul>
 					</li>
 				</ul>

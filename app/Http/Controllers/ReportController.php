@@ -90,7 +90,6 @@ class ReportController extends BaseController
             return $b['count'] - $a['count'];
         });
 
-
         return view('report.keywords', ['userName' => $userName, 'results' => $results]);
     }
 
@@ -119,11 +118,6 @@ class ReportController extends BaseController
         $investmentGain = number_format(($gainTotal / $totalCampains), 2);
         $daysAverage = number_format(($totalDays / $totalCampains), 2);
 
-
-
         return view('report.global', ['userName' => $userName, 'total' => $totalCampains, 'campainAverage' => $daysAverage, 'investmentAverage' => $investmentAverage, 'gainAverage' => $investmentGain]);
     }
-
-
-
 }
