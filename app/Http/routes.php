@@ -39,6 +39,8 @@ Route::get('user', [
 /*CAMPAIN*/
 
 Route::resource('campain', 'CampainController');
+
+Route::resource('login', 'LoginController');
 //
 // Route::get('campain', [
 //     'as'  => 'campain',

@@ -65,8 +65,8 @@
 								Hola, <strong>{{ $userName }}</strong>
 							  </a>
 							  <ul class="dropdown-menu square primary margin-list-rounded with-triangle">
-								<li><a href="#fakelink">Mi cuenta</a></li>
-								<li class="divider"></li>
+								<!-- <li><a href="#fakelink">Mi cuenta</a></li> -->
+								<!-- <li class="divider"></li> -->
 								<li>{!! HTML::link('auth/logout', 'Logout') !!}</li>
 							  </ul>
 							</li>
@@ -104,8 +104,8 @@
 							Usuarios
 						</a>
 						<ul class="submenu">
-							<li><a href="{!! URL::route('company.index') !!}">Listar</a></li>
-							<li><a href="{!! URL::route('company.create') !!}">Agregar</a></li>
+							<li><a href="{!! URL::route('login.index') !!}">Listar</a></li>
+							<li><a href="{!! URL::route('login.create') !!}">Agregar</a></li>
 						</ul>
 					</li>
 					<li>
