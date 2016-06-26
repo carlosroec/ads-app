@@ -72,3 +72,9 @@ Route::get('report', [
     'middleware' => 'auth',
     'uses' => 'UserController@index'
 ]);
+
+Route::get('report_campains', [
+    'as'  => 'report_campains',
+    'middleware' => 'auth',
+    'uses' => 'ReportController@campains'
+]);
