@@ -32,7 +32,8 @@
 		===========================================================
 		-->
 		<div class="login-header text-center">
-			<!-- <img src="assets/img/logo-login.png" class="logo" alt="Logo"> -->
+			<!--<img src="assets/img/logo-login.png" class="logo" alt="Logo">-->
+			<div style="line-height:10; font-size:25px; color:#ffffff;">Sistema Gestor de Negocios Inteligentes y Control ROI</div>
 		</div>
 		<div class="login-wrapper">
             @if (count($errors) > 0)
@@ -60,15 +61,15 @@
 				<div class="form-group">
 				  <div class="checkbox">
 					<label>
-					  <input type="checkbox" name="remember" class="i-yellow-flat"> Remember me
+					  <input style="display:none;" type="checkbox" name="remember" class="i-yellow-flat">
 					</label>
 				  </div>
 				</div>
 				<div class="form-group">
-					<button type="submit" class="btn btn-warning btn-lg btn-perspective btn-block">LOGIN</button>
+					<button type="submit" class="btn btn-warning btn-lg btn-perspective btn-block">INGRESAR</button>
 				</div>
 			</form>
-
+			<img style="margin-left:50px" src="http://www.kooper.ec/wp-content/uploads/2014/07/kooper_logo.png" />
 		</div><!-- /.login-wrapper -->
 		<!--
 		===========================================================

@@ -36,7 +36,7 @@ return [
     'digits_between'       => 'The :attribute must be between :min and :max digits.',
     'email'                => 'The :attribute must be a valid email address.',
     'exists'               => 'The selected :attribute is invalid.',
-    'filled'               => 'The :attribute field is required.',
+    'filled'               => 'El valor :attribute es requerido.',
     'image'                => 'The :attribute must be an image.',
     'in'                   => 'The selected :attribute is invalid.',
     'integer'              => 'The :attribute must be an integer.',
@@ -58,7 +58,7 @@ return [
     'not_in'               => 'The selected :attribute is invalid.',
     'numeric'              => 'The :attribute must be a number.',
     'regex'                => 'The :attribute format is invalid.',
-    'required'             => 'The :attribute field is required.',
+    'required'             => 'El valor :attribute es requerido.',
     'required_if'          => 'The :attribute field is required when :other is :value.',
     'required_with'        => 'The :attribute field is required when :values is present.',
     'required_with_all'    => 'The :attribute field is required when :values is present.',
@@ -90,6 +90,28 @@ return [
     'custom' => [
         'attribute-name' => [
             'rule-name' => 'custom-message',
+        ],
+        'name' => [
+            'required' => 'El campo NOMBRE es requerido.',
+            'unique' => 'El NOMBRE indicado ya existe.'
+        ],
+        'description' => [
+            'required' => 'El campo DESCRIPCIÓN es requerido.',
+        ],
+        'phone' => [
+            'required' => 'El campo TELÉFONO es requerido.',
+        ],
+        'email' => [
+            'required' => 'El campo EMAIL es requerido.',
+            'unique' => 'El EMAIL indicado ya existe.'
+        ],
+        'password' => [
+            'required' => 'El campo PASSWORD es requerido.',
+            'min' => 'El campo PASSWORD debe contener al menos 6 caracteres.'
+        ],
+        'password_confirm' => [
+            'required' => 'El campo CONFIRMAR PASSWORD es requerido.',
+            'same' => 'El campo CONFIRMAR PASSWORD debe ser igual a CLAVE.',
         ],
     ],
 

@@ -26,6 +26,7 @@
                 		</tbody>
                 	</table>
                     <button id="print" class="btn btn-danger"><i class="fa fa-sign-in"></i> Imprimir</button>
+					<buttom id="back" onclick="javascript:window.history.back();" class="btn btn-success">Regresar</button>
                 </div>
             </div>
         </div>

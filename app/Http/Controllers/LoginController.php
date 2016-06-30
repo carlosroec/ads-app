@@ -35,13 +35,25 @@ class LoginController extends Controller
         $userName = Auth::user()->name;
 
         $this->validate($request, [
-                'name'          => 'required',
-                'email'         => 'required',
-                'password'      => 'required'
+                'name'              => 'required|unique:users',
+                'email'             => 'required|unique:users',
+                'password'          => 'required|min:6',
+                'password_confirm'  => 'required|same:password'
             ]);
 
         $input = $request->all();
 
+        // $emailCount = User::where('email', '=', $input['email'])->count();
+        // $nameCount = User::where('name', '=', $input['name'])->count();
+        //
+        // if ($emailCount > 0)
+        // {
+        //     return view('users.create', ['userName' => $userName, 'users' => $users]);
+        // }
+        // if ($nameCount > 0)
+        // {
+        //
+        // }
         $user = new User;
         $user->name = $input['name'];
         $user->email = $input['email'];

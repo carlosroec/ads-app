@@ -84,6 +84,13 @@
                 <script>
                     $('#print').on('click', function() {
                         $(this).hide();
+						$('#back').hide();
+
+						setTimeout(function (){
+							$('#print').show();
+							$('#back').show();
+						}, 200);
+						
                         window.print();
                     });
                 </script>

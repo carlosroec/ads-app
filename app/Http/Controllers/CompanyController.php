@@ -35,7 +35,7 @@ class CompanyController extends Controller
         $userName = Auth::user()->name;
 
         $this->validate($request, [
-                'name'          => 'required',
+                'name'          => 'required|unique:companies',
                 'description'   => 'required',
                 'phone'         => 'required',
                 'email'         => 'required'
