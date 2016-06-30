@@ -129,19 +129,22 @@ class CampainController extends Controller
 
             $relevance = ($relevance * 100) . "%";
 
-            $keyword = Keyword::where('text', '=', $text)->count();
+            $keyword = Keyword::where('text', '=', $text)->get();
 
-            if ($keyword == 0) {
+            if (count($keyword) == 0) {
                 $isRegistered = 'Nuevo Registro';
                 $keyword = new Keyword;
                 $keyword->text = $text;
                 $keyword->save();
+            } else {
 
-                $link = new Link;
-                $link->campain_id = $campain_id;
-                $link->keyword_id = $keyword->id;
-                $link->save();
+                $keyword = $keyword[0];
             }
+
+            $link = new Link;
+            $link->campain_id = $campain_id;
+            $link->keyword_id = $keyword->id;
+            $link->save();
 
             $keywords[] = [
                 "text" => $text,
