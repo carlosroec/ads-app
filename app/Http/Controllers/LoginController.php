@@ -43,17 +43,7 @@ class LoginController extends Controller
 
         $input = $request->all();
 
-        // $emailCount = User::where('email', '=', $input['email'])->count();
-        // $nameCount = User::where('name', '=', $input['name'])->count();
-        //
-        // if ($emailCount > 0)
-        // {
-        //     return view('users.create', ['userName' => $userName, 'users' => $users]);
-        // }
-        // if ($nameCount > 0)
-        // {
-        //
-        // }
+
         $user = new User;
         $user->name = $input['name'];
         $user->email = $input['email'];
@@ -75,6 +65,11 @@ class LoginController extends Controller
     public function update(Request $request, $id)
     {
         $user = User::find($id);
+
+        $this->validate($request, [
+                'name'              => 'required',
+                'email'             => 'required'
+            ]);
 
         $input = $request->all();
 

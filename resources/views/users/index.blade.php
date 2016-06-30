@@ -25,7 +25,7 @@
 
 				<td>{!! HTML::linkRoute('login.edit', 'Ver', array($user->id)) !!}</td>
 				<td>
-					<form role="form" method="POST" action="/user/{{ $user->id }}">
+					<form role="form" method="POST" action="/login/{{ $user->id }}">
 						<input name="_method" type="hidden" value="DELETE">
 						<button type="submit" >ELIMINAR</button>
 						<input type="hidden" name="_token" value="{{ csrf_token() }}">
