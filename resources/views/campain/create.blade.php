@@ -19,31 +19,31 @@
 			<form role="form" method="POST" action="/campain/">
 			  <div class="form-group">
 				<label>Inicio</label>
-				<input type="text" name="start_at" class="form-control datepicker" data-date-format="yyyy-mm-dd" placeholder="yyyy-mm-dd">
+				<input type="text" name="start_at" class="form-control datepicker" value="{{ old('start_at') }}" data-date-format="yyyy-mm-dd" placeholder="yyyy-mm-dd">
 			  </div>
 			  <div class="form-group">
 				<label>Fin</label>
-				<input type="text" name="end_at" class="form-control datepicker" data-date-format="yyyy-mm-dd" placeholder="yyyy-mm-dd">
+				<input type="text" name="end_at" class="form-control datepicker" value="{{ old('end_at') }}" data-date-format="yyyy-mm-dd" placeholder="yyyy-mm-dd">
 			  </div>
 			  <div class="form-group">
 				<label>Descripción</label>
-				<input type="text" name="description" class="form-control">
+				<input type="text" name="description" value="{{ old('description') }}" class="form-control">
 			  </div>
 			  <div class="form-group">
 				<label>Costo</label>
-				<input type="text" name="cost" class="form-control">
+				<input type="text" name="cost" value="{{ old('cost') }}" class="form-control">
 			  </div>
 			  <div class="form-group">
 				<label>Beneficio</label>
-				<input type="text" name="gain" class="form-control">
+				<input type="text" name="gain" value="{{ old('gain') }}" class="form-control">
 			  </div>
 			  <div class="form-group">
 				<label>Objetivo</label>
-				<input type="text" name="target" class="form-control">
+				<input type="text" name="target" value="{{ old('target') }}" class="form-control">
 			  </div>
 			  <div class="form-group">
 				<label>Texto</label>
-				<textarea name="advert" class="form-control"></textarea>
+				<textarea name="advert" class="form-control">{{ old('advert') }}</textarea>
 			  </div>
 
 			  <div class="form-group">
@@ -56,7 +56,7 @@
 			  </div>
 
 			  <input type="hidden" name="_token" value="{{ csrf_token() }}">
-			  
+
 			  <button type="submit" class="btn btn-danger"><i class="fa fa-sign-in"></i> Agregar</button>
 			</form>
 		</div><!-- /.the-box -->

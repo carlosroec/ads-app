@@ -48,7 +48,6 @@ class CampainController extends Controller
                 'start_at'      => 'required',
                 'end_at'        => 'required',
                 'description'   => 'required',
-                'target'        => 'required',
                 'advert'        => 'required'
             ]);
 
@@ -90,6 +89,16 @@ class CampainController extends Controller
     public function destroy($id)
     {
         $campain = Campain::find($id);
+
+        $links = Link::where('campain_id', '=', $id)->get();
+
+        if (count($links) > 0)
+        {
+            foreach ($links as $link)
+            {
+                $link->delete();
+            }
+        }
 
         $campain->delete();
 

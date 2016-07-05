@@ -7,6 +7,8 @@ use Illuminate\Http\Request;
 
 use Auth;
 use App\Company;
+use App\Campain;
+use App\Link;
 use App\User;
 
 
@@ -83,6 +85,37 @@ class LoginController extends Controller
     public function destroy($id)
     {
         $user = User::find($id);
+
+        $companies = Company::where('user_id', '=', $id)->get();
+
+        if (count($companies) > 0)
+        {
+            foreach ($companies as $company)
+            {
+                $campains = Campain::where('company_id', '=', $company->id)->get();
+
+                if (count($campains) > 0)
+                {
+                    foreach ($campains as $campain)
+                    {
+
+                        $links = Link::where('campain_id', '=', $campain->id)->get();
+
+                        if (count($links) > 0)
+                        {
+                            foreach ($links as $link)
+                            {
+                                $link->delete();
+                            }
+                        }
+                        $campain->delete();
+                    }
+                }
+            }
+
+            $company->delete();
+        }
+
         $user->delete();
 
         return redirect('login/');

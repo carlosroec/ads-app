@@ -8,6 +8,8 @@ use Illuminate\Http\Request;
 use Auth;
 use App\Company;
 use App\User;
+use App\Link;
+use App\Campain;
 
 
 class CompanyController extends Controller
@@ -46,6 +48,7 @@ class CompanyController extends Controller
         $company = new Company;
         $company->name = $input['name'];
         $company->description = $input['description'];
+        $company->email = $input['email'];
         $company->phone = $input['phone'];
         $company->user_id = $input['user'];
         $company->save();
@@ -71,6 +74,7 @@ class CompanyController extends Controller
         $company->name = $input['name'];
         $company->description = $input['description'];
         $company->phone = $input['phone'];
+        $company->email = $input['email'];
         $company->user_id = $input['user'];
         $company->save();
 
@@ -80,6 +84,26 @@ class CompanyController extends Controller
     public function destroy($id)
     {
         $company = Company::find($id);
+
+        $campains = Campain::where('company_id', '=', $id)->get();
+
+        if (count($campains) > 0)
+        {
+            foreach ($campains as $campain)
+            {
+                $links = Link::where('campain_id', '=', $campain->id)->get();
+
+                if (count($links) > 0)
+                {
+                    foreach ($links as $link)
+                    {
+                        $link->delete();
+                    }
+                }
+
+                $campain->delete();
+            }
+        }
 
         $company->delete();
 
