@@ -136,13 +136,12 @@ class ReportController extends BaseController
             $resp[$id] = $roi;
         }
         arsort($resp);
-
         $report = [];
 
         foreach ($resp as $key => $value)
         {
 
-
+            $campain = Campain::find($key);
             $lists = DB::table('links')->where('campain_id', '=', $key)->get();
 
             $keywords = [];
