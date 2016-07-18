@@ -95,3 +95,8 @@ Route::get('report_global', [
     'middleware' => 'auth',
     'uses' => 'ReportController@global1'
 ]);
+Route::get('report_roi', [
+    'as'  => 'report_roi',
+    'middleware' => 'auth',
+    'uses' => 'ReportController@roi'
+]);

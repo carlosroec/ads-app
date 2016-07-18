@@ -11,20 +11,20 @@
 	</div>
 	<div class="col-sm-6">
 		<div class="the-box">
-			<h4 class="small-title">CAMPAÑAS</h4>
+			<h4 class="small-title">CAMPAÑAS ROI</h4>
 			<div id="c3-pie" style="height: 300px;"></div>
 		</div>
 	</div>
 
 	<script>
 		var columns = [
-    		['Inversion', 300, 350, 300, 0, 0, 0],
-    		['Ganancia', 130, 100, 140, 200, 150, 50]
+    		['Inversion', {{$lastFive[0][0]}}, {{$lastFive[1][0]}}, {{$lastFive[2][0]}}, {{$lastFive[3][0]}}, {{$lastFive[4][0]}}],
+    		['Ganancia', {{$lastFive[0][1]}}, {{$lastFive[1][1]}}, {{$lastFive[2][1]}}, {{$lastFive[3][1]}}, {{$lastFive[4][1]}}]
     	];
 
 		var pie = [
-    		['data1', 30],
-    		['data2', 120],
+    		['Positivo', {{$positiveROI}}],
+    		['Negativo', {{$negativeROI}}],
     	];
 	</script>
 @stop

@@ -120,4 +120,48 @@ class ReportController extends BaseController
 
         return view('report.global', ['userName' => $userName, 'total' => $totalCampains, 'campainAverage' => $daysAverage, 'investmentAverage' => $investmentAverage, 'gainAverage' => $investmentGain]);
     }
+
+    public function roi()
+    {
+        $userName = Auth::user()->name;
+
+        $campains = Campain::all();
+
+        $resp = array();
+
+        foreach ($campains as $campain)
+        {
+            $id = $campain->id;
+            $cost = $campain->cost;
+            $gain = $campain->gain;
+
+            $roi = ($gain - $cost) / $cost;
+
+            $resp[$id] = $roi;
+        }
+        arsort($resp);
+
+        $report = [];
+
+        foreach ($resp as $key => $value)
+        {
+
+
+            $lists = DB::table('links')->where('campain_id', '=', $key)->get();
+
+            $keywords = [];
+            foreach ($lists as $list)
+            {
+                $keyword_id = $list->keyword_id;
+
+                $keyword = Keyword::find($keyword_id);
+
+                $keywords[] = $keyword->text;
+            }
+
+            $report[] = ["campain" => $campain->description, "roi" => $value, "keywords" => $keywords];
+        }
+
+        return view('report.roi', ['userName' => $userName, 'reports' => $report]);
+    }
 }
