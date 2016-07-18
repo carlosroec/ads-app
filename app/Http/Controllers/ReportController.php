@@ -40,10 +40,6 @@ class ReportController extends BaseController
 
             $roi = ($totalGain - $totalInvestment) / $totalInvestment;
 
-            if ($roi < 0)
-            {
-                $roi = 0;
-            }
 
             $roi = number_format($roi, 2);
 
