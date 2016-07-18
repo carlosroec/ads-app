@@ -113,6 +113,12 @@ return [
             'required' => 'El campo CONFIRMAR PASSWORD es requerido.',
             'same' => 'El campo CONFIRMAR PASSWORD debe ser igual a CLAVE.',
         ],
+        'advert' => [
+            'required' => 'El campo TEXTO es requerido.'
+        ],
+        'cost' => [
+            'required' => 'El campo COSTO es requerido.'
+        ],
     ],
 
     /*

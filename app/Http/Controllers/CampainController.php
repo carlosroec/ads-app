@@ -47,6 +47,7 @@ class CampainController extends Controller
         $this->validate($request, [
                 'start_at'      => 'required',
                 'end_at'        => 'required',
+                'cost'          => 'required',
                 'description'   => 'required',
                 'advert'        => 'required'
             ]);
