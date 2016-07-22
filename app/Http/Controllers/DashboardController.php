@@ -36,6 +36,7 @@ class DashboardController extends BaseController
         }
 
         $campainsA = $campains->toArray();
+        $campainsA = array_reverse($campainsA);
         $max = 5;
         if (count($campainsA) < 5) {
             $max = count($campainsA);
